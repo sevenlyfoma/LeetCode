@@ -13,6 +13,35 @@ class AppTest {
      */
     @Test
     void testApp() {
+        App a = new App();
         assertEquals(1, 1);
+    }
+
+
+    /**
+     * Rigorous Test.
+     */
+    @Test
+    void testThreeSizeSubString() {
+        App a = new App();
+        assertEquals("ABC", a.gcdOfStrings("ABCABC", "ABC"));
+    }
+
+    /**
+     * Rigorous Test.
+     */
+    @Test
+    void testTwoSizeSubString() {
+        App a = new App();
+        assertEquals("AB", a.gcdOfStrings("ABABAB", "AB"));
+    }
+
+    /**
+     * Rigorous Test.
+     */
+    @Test
+    void testNoSubString() {
+        App a = new App();
+        assertEquals("", a.gcdOfStrings("ABABAB", "AAA"));
     }
 }
