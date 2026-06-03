@@ -25,6 +25,37 @@ public class AppTest
         assertEquals("AceCreIm", App.reverseVowels("IceCreAm"));
     }
 
+    @Test
+    public void simpleTest()
+    {
+        assertEquals("aBBe", App.reverseVowels("eBBa"));
+    }
+
+    @Test
+    public void simpleTest2()
+    {
+        assertEquals("ABBE", App.reverseVowels("EBBA"));
+    }
+
+     @Test
+    public void emptyTest()
+    {
+        assertEquals(" ", App.reverseVowels(" "));
+    }
+
+     @Test
+    public void onevowel()
+    {
+        assertEquals("ab", App.reverseVowels("ab"));
+    }
+
+     @Test
+    public void threletnoevowel()
+    {
+        assertEquals("bbb", App.reverseVowels("bbb"));
+    }
+
+
 
     @Test
     public void testIsVowel()
