@@ -6,8 +6,19 @@ package io.github.sevenlyfoma;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static String reverseWords(String s) {
+        StringBuilder sb = new StringBuilder();
+
+        String[] split = s.strip().split("\\s+");
+
+        for (int i = split.length-1; i >= 0; i--){
+            sb.append(split[i]);
+            sb.append(" ");
+        }
+
+        sb.deleteCharAt(sb.length()-1);
+
+
+        return sb.toString();
     }
 }
