@@ -10,9 +10,13 @@ public class App
     {
         System.out.println( "Hello World!" );
     }
-
+    
     public static int maxVowels(String s, int k) {
         
+        //Use sliding window approach
+        //
+
+
         return 0;
     }
 }
