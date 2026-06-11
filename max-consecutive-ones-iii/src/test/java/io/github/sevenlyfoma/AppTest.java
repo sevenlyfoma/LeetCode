@@ -59,4 +59,12 @@ public class AppTest
         int[] inp = {0,0,1,1,1,0,0};
         assertEquals(3, App.longestOnes(inp, 0));
     }
+
+
+    @Test
+    public void sampleTest3()
+    {
+        int[] inp = {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1};
+        assertEquals(10, App.longestOnes(inp, 3));
+    }
 }
