@@ -17,7 +17,7 @@ public class App
         int rp = height.length-1;
 
         int maxVolume = 0;
-        int nv = 0;
+        int nv;
 
         while (lp < rp){
             int y1 = height[lp];

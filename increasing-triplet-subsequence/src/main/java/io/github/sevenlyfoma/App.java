@@ -1,7 +1,5 @@
 package io.github.sevenlyfoma;
 
-import java.util.ArrayList;
-
 /**
  * Hello world!
  *
