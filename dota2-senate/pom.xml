@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.sevenlyfoma</groupId>
-  <artifactId>number-of-recent-calls</artifactId>
+  <artifactId>dota2-senate</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>number-of-recent-calls</name>
+  <name>dota2-senate</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
