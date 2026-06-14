@@ -55,6 +55,10 @@ public class App
         ListNode x = previous;
         ListNode y = halfNode;
 
+        if (x == null || y == null){
+            return 0;
+        }
+
         while (i < size/2){
 
             int sum = x.val + y.val;
