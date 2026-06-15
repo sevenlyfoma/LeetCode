@@ -1,5 +1,7 @@
 package io.github.sevenlyfoma;
 
+import java.util.HashMap;
+
 /**
  * Hello world!
  *
@@ -20,6 +22,36 @@ public class App
     }
 
     public static int pathSum(TreeNode root, int targetSum) {
+        // if (root == null) {return 0;}
+
+        HashMap<Long, Integer> tracker = new HashMap<>();
+
+        tracker.put(0l,1);
+
+        
+        return pathSumRecursiveHashMap(root, targetSum, tracker, 0);
+    }
+
+    public static int pathSumRecursiveHashMap(TreeNode node, int targetSum, HashMap<Long, Integer> tracker, long runningSum) {
+        if (node == null) {return 0;}
+
+        runningSum += node.val;
+
+        int res = tracker.getOrDefault(runningSum-targetSum, 0);
+
+        tracker.put(runningSum, tracker.getOrDefault(runningSum, 0) + 1);
+
+        res += pathSumRecursiveHashMap(node.left, targetSum, tracker, runningSum);
+        res += pathSumRecursiveHashMap(node.right, targetSum, tracker, runningSum);
+
+                
+        
+        tracker.put(runningSum, tracker.get(runningSum) - 1);
+        
+        return res;
+    }
+
+    public static int pathSumSlow(TreeNode root, int targetSum) {
         if (root == null) {return 0;}
 
 
