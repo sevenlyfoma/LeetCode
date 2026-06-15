@@ -1,5 +1,6 @@
 package io.github.sevenlyfoma;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -15,43 +16,26 @@ public class AppTest
     {
         TreeNode root = new TreeNode();
 
-        Integer[] inp = {10,5,-3,3,2,null,11,3,-2,null,1};
+        Integer[] inp = {1,null,1,1,1,null,null,1,1,null,1,null,null,null,1};
 
         root.buildTree(inp);
 
+        assertEquals(3, App.longestZigZag(root));
+
     }
+
+    
 
     @Test
     public void sampleTest2()
     {
         TreeNode root = new TreeNode();
 
-        Integer[] inp = {5,4,8,11,null,13,4,7,2,null,null,5,1};
+        Integer[] inp = {1,1,1,null,1,null,null,1,1,null,1};
 
         root.buildTree(inp);
 
-    }
-
-    @Test
-    public void sampleTest3()
-    {
-        TreeNode root = new TreeNode();
-
-        Integer[] inp = {1,null,2,null,3,null,4,null,5};
-
-        root.buildTree(inp);
+        assertEquals(4, App.longestZigZag(root));
 
     }
-
-    @Test
-    public void sampleTest4()
-    {
-        TreeNode root = new TreeNode();
-
-        Integer[] inp = {1000000000,1000000000,null,294967296,null,1000000000,null,1000000000,null,1000000000,null};
-
-        root.buildTree(inp);
-
-    }
-
 }

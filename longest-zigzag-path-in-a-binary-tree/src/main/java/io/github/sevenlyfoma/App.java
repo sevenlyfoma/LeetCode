@@ -18,6 +18,32 @@ public class App
     }
 
     public static int longestZigZag(TreeNode root) {
-        return 0;
+        return longestZigZagR(root, 0, true);
+    }
+
+    public static int longestZigZagR(TreeNode root, int zigZagCount, boolean zigZagLeftNext) {
+
+        if (root == null){
+            return zigZagCount - 1;
+        }
+        
+
+
+        int longestLeft;
+        int longestRight;
+
+        if (zigZagLeftNext){
+            longestLeft = longestZigZagR(root.left, zigZagCount+1, false);
+            longestRight = longestZigZagR(root.right, 1, true);
+        }
+        else{
+            longestLeft = longestZigZagR(root.left, 1, false);
+            longestRight = longestZigZagR(root.right, zigZagCount+1, true);
+        }
+
+        if (longestLeft > longestRight){
+            return longestLeft;
+        }
+        return longestRight;
     }
 }
