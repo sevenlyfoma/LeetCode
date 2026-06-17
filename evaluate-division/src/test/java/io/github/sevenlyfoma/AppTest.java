@@ -1,7 +1,8 @@
 package io.github.sevenlyfoma;
 
-import static org.junit.Assert.assertTrue;
+import java.util.List;
 
+import static org.junit.Assert.assertArrayEquals;
 import org.junit.Test;
 
 /**
@@ -13,8 +14,14 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void sampleTest1()
     {
-        assertTrue( true );
+        List<List<String>> equations = List.of(List.of("a","b"), List.of("b","c"));
+        double[] values = {2.0, 3.0};
+        List<List<String>> queries = List.of(List.of("a", "c"));
+
+        double[] output = {6.0};
+        
+        assertArrayEquals(output, App.calcEquation(equations, values, queries), 0.01);
     }
 }
