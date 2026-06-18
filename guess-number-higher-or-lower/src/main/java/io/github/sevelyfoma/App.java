@@ -12,7 +12,7 @@ public class App
         System.out.println(a.guessNumber(2));
     }
 
-    private int guessNo;
+    private final int guessNo;
 
     public App(int g){
         guessNo = g;
