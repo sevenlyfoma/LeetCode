@@ -1,7 +1,6 @@
 package io.github.sevenlyfoma;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -15,6 +14,6 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        assertEquals(5, App.climbStairs(4));
     }
 }
