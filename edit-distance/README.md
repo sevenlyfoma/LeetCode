@@ -38,3 +38,20 @@ Constraints:
 
     0 <= word1.length, word2.length <= 500
     word1 and word2 consist of lowercase English letters.
+
+
+"plasma", "altruism"
+
+p -> a
+a -> t
+insert t
+insert u
+insert i
+delete m
+
+a -> p
+t -> a
+delete r
+delete u
+delete i
+insert a
