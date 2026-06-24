@@ -19,6 +19,8 @@ public class Trie {
     public boolean valid;
 
     public ArrayList<Trie> children;
+
+    public String fullContent;
     
 
     public Trie() {
@@ -46,7 +48,7 @@ public class Trie {
             System.out.print("root");
         }
         if (valid){
-            System.out.print("-v");
+            System.out.print("-" + this.fullContent);
         }
         System.out.print("\n");
 
@@ -64,6 +66,7 @@ public class Trie {
 
         if (index == word.length()){
             this.valid = true;
+            this.fullContent = word;
             return;
         }
         
@@ -124,43 +127,61 @@ public class Trie {
         
     }
 
-    public List<String> getAllMatches(String search){
-        List<String> ans = new ArrayList<>();
-        getAllMatchesR(search, 0, ans);
-        return ans;
+
+    public List<String> getThree(){
+        List<String> results = new ArrayList<>();
+
+        getThreeR(results);
+
+        return results;
     }
 
-    public void getAllMatchesR(String search, int index, List<String> ans){
-        Trie target = null;
+    public void getThreeR(List<String> results){
 
-        if (index == search.length()){
+        if (this.valid){
+            results.add(this.fullContent);
+
+            results.sort(null);
+
+            while (results.size() > 3){
+                results.remove(results.size()-1);
+            }
+
+        }
+
+        for (Trie t: this.children){
+            t.getThreeR(results);
+        }
+    }
+
+    public List<List<String>> getSuggestions(String searchWord){
+        List<List<String>> result = new ArrayList<>();
+
+        getSuggestionsR(searchWord, 0, result);
+
+        while (result.size() < searchWord.length()){
+            result.add(new ArrayList<>());
+        }
+
+        return result;
+    }
+
+    public void getSuggestionsR(String searchWord, int index, List<List<String>> result){
+
+        if (index == searchWord.length()){
             return;
         }
 
-        for (Trie child: children){
-            if (child.content == search.charAt(index)){
-                target = child;
+        for (Trie t: this.children){
+
+            if (t.content == searchWord.charAt(index)){
+                result.add(t.getThree());
+                t.getSuggestionsR(searchWord, index+1, result);
             }
+
+
         }
 
-        if (target != null){
-            if (index == search.length() - 1){
-                addAllValid(search, index, ans);
-            }
-            else{
-                target.getAllMatchesR(search, index+1, ans);
-            }
-        }
-    }
-
-    public void addAllValid(String search, int index, List<String> ans){
-        if (valid && ans.size() < 3){
-            ans.add(search.substring(0, index));
-        }
-
-        for (Trie c: children){
-            c.addAllValid(search, index+1, ans);
-        }
 
     }
 }

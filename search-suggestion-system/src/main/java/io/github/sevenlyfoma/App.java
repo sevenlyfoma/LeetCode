@@ -1,6 +1,5 @@
 package io.github.sevenlyfoma;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,9 +10,21 @@ public class App
 {
     public static void main( String[] args )
     {
+        Trie root = new Trie();
+
+        root.insert("mobile"); 
+        root.insert("mouse");
+
+        root.insert("moneypot"); 
+        root.insert("monitor");
+        root.insert("mousepad"); 
+
+        // root.printTree();
+
+        // System.out.println(root.getThree());
+
         String[] products = {"mobile","mouse","moneypot","monitor","mousepad"};
         String searchWord = "mouse";
-
 
         System.out.println(App.suggestedProducts(products, searchWord));
 
@@ -27,12 +38,6 @@ public class App
             t.insert(s);
         }
 
-        List<List<String>> res = new ArrayList<>();
-
-        for (int i = 0; i < searchWord.length(); i++){
-            res.add(t.getAllMatches(searchWord.substring(0, i+1)));
-        }
-
-        return res;
+        return t.getSuggestions(searchWord);
     }
 }
