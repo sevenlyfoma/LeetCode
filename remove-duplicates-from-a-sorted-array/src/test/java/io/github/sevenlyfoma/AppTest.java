@@ -1,7 +1,6 @@
 package io.github.sevenlyfoma;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -13,8 +12,16 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void sampleTest1()
     {
-        assertTrue( true );
+        int[] nums = {1,1,2};
+        int[] expectedNums = {1,2};
+
+        int k = App.removeDuplicates(nums);
+
+        assertEquals(k, expectedNums.length);
+        for (int i = 0; i < k; i++) {
+            assertEquals(nums[i], expectedNums[i]);
+        }
     }
 }

@@ -10,4 +10,8 @@ public class App
     {
         System.out.println( "Hello World!" );
     }
+
+    public static int removeDuplicates(int[] nums) {
+        return 0;
+    }
 }
