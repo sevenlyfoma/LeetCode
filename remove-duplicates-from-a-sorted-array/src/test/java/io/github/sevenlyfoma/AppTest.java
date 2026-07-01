@@ -14,8 +14,8 @@ public class AppTest
     @Test
     public void sampleTest1()
     {
-        int[] nums = {1,1,2};
-        int[] expectedNums = {1,2};
+        int[] nums = {4,4,5};
+        int[] expectedNums = {4,5};
 
         int k = App.removeDuplicates(nums);
 
