@@ -18,4 +18,12 @@ public class AppTest
 
         assertEquals(1, App.hIndex(inp));
     }
+
+    @Test
+    public void sampleTest2()
+    {
+        int[] inp = {100};
+
+        assertEquals(1, App.hIndex(inp));
+    }
 }
