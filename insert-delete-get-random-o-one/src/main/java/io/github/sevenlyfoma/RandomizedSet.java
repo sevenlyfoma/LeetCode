@@ -53,7 +53,6 @@ class RandomizedSet {
 
             int front = checker.get(tail);
 
-            checker.set(tail, val);
             checker.set(position, front);
 
             hm.put(front, position);
