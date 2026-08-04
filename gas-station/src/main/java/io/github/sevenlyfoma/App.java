@@ -10,4 +10,8 @@ public class App
     {
         System.out.println( "Hello World!" );
     }
+
+    public static int canCompleteCircuit(int[] gas, int[] cost) {
+        return 0;
+    }
 }

@@ -1,7 +1,6 @@
 package io.github.sevenlyfoma;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -13,8 +12,11 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void sampleTest1()
     {
-        assertTrue( true );
+        int[] gas = {1,2,3,4,5};
+        int[] cost = {3,4,5,1,2};
+
+        assertEquals(3, App.canCompleteCircuit(gas, cost));
     }
 }
