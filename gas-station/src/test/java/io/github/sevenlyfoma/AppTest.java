@@ -19,4 +19,24 @@ public class AppTest
 
         assertEquals(3, App.canCompleteCircuit(gas, cost));
     }
+
+
+    @Test
+    public void sampleTest2()
+    {
+        int[] gas = {2,3,4};
+        int[] cost = {3,4,3};
+
+        assertEquals(-1, App.canCompleteCircuit(gas, cost));
+    }
+
+
+    @Test
+    public void sampleTest3()
+    {
+        int[] gas = {3,3,4};
+        int[] cost = {3,4,4};
+
+        assertEquals(-1, App.canCompleteCircuit(gas, cost));
+    }
 }
