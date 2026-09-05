@@ -8,10 +8,47 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
     }
 
     public static int canCompleteCircuit(int[] gas, int[] cost) {
-        return 0;
+
+
+        int n = gas.length;
+
+        int ret = -1;
+
+        for (int i = 0; i < n; i++){
+            int currentGas = 0;
+
+            boolean canDoIt = true;
+
+            for (int j = 0; j < n; j++){
+
+                int currentPos = (i + j) % n;
+                currentGas += gas[currentPos];
+                int currentCost = cost[currentPos];
+
+                if (currentCost > currentGas){
+                    canDoIt = false;
+                }
+                else{
+                    currentGas -= currentCost;
+                }
+
+
+            }
+
+            if (canDoIt){
+                ret = i;
+            }
+
+
+
+
+        }
+
+
+
+        return ret;
     }
 }
